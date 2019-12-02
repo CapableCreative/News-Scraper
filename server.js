@@ -13,6 +13,8 @@ app.use( bodyParser.urlencoded({extended: false}) );
 app.engine( "handlbars", exphbs({ defaultLaout: "main" }));
 app.set( "view engine", "handlebars" );
 
+app.use(express.static(process.cwd() + "/public"));
+
 app.listen(port, function() {
     console.log(`App listeing on port ${port}`);
 });
